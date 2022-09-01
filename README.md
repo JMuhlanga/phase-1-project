@@ -17,10 +17,15 @@ Spice E-sports aims to creating an avenue to give this recognition to notable pe
 # Minimum Viable Product
 
 The first version of the page should be able to:
+
 I. Have the ability to be viewable on various devices.
+
 II. Have the ability to capture details of people who want to join the site.
+
 III. Have the capability for a user to be able to select what form of games they like.
+
 IV. The page should post achievements of members and teams already in the system.
+
 V. The page should post new e-sports events that are going to happen and where some can come and watch.
 
 # Technologies
