@@ -39,4 +39,8 @@ V. The page should post new e-sports events that are going to happen and where s
 # Live Link to Page
 (https://jmuhlanga.github.io/phase-1-project/)
 
+# Challenges Faced
+
+1. The Api meant to be used was a trial run hence.
+
 
