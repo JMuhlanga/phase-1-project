@@ -3,12 +3,14 @@ document.addEventListener("DOMContentLoaded",()=>{
     fetchEvents();
 })
 
+//function to fetch Events for the Events Section
 function fetchEvents(){
     fetch(`http://localhost:3000/events`)
     .then((response)=> response.json())
     .then((data) => renderEvents(data))
 }
 
+//function for rendering Events
 function renderEvents (data){
     const eventSection = document.querySelector(`#eventList`);
     data.forEach(someEvent => {
@@ -18,8 +20,10 @@ function renderEvents (data){
     });
 }
 
+//declaration of the form Section 'div' in html file
 const formSection = document.getElementById('forms');
 
+// Event listener for the Team Registration Button which then avails the respective  form
 document.getElementById('teamReg').addEventListener("click",function(){
     this.disabled = true;
     const formElement = document.createElement(`form`);
@@ -36,6 +40,7 @@ document.getElementById('teamReg').addEventListener("click",function(){
 
 })
 
+// Event Listener for the Player Registration Button which then avails the respective form
 document.getElementById('playerReg').addEventListener("click",function(){
     this.disabled = true;
     const formElement = document.createElement(`form`);
@@ -53,6 +58,7 @@ document.getElementById('playerReg').addEventListener("click",function(){
 
 })
 
+//Event listener for Event Registration Button which then avails the respective form
 document.getElementById('eventReg').addEventListener("click",function(){
     this.disabled = true;
     const formElement = document.createElement(`form`);
@@ -69,4 +75,21 @@ document.getElementById('eventReg').addEventListener("click",function(){
 
 })
 
+// Event listener for the submit of the Team registration form
+document.getElementById('teamRegForm').addEventListener('submit', (someEvent)=>{
+    someEvent.preventDefault();
+    
+})
 
+// Event listener for the submit of the Team registration form
+document.getElementById('playerRegForm').addEventListener('submit', (someEvent)=>{
+    someEvent.preventDefault();
+    
+})
+
+// Event listener for the submit of the Team registration form
+document.getElementById('eventRegForm').addEventListener('submit', (someEvent)=>{
+    someEvent.preventDefault();
+    
+    
+})
