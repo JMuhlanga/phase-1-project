@@ -98,8 +98,8 @@ function getTeamRegInfo(form){
         const data = new FormData(someEvent.target)
         const value = object.fromEntries(data.entries());
 
-        const postData = (url = 'http://localhost:3000/teamsRegistration',data={}){
-            const response = await fetch(url,{
+        const postData = (url = 'http://localhost:3000/teamsRegistration',data={})=>{
+            const response = fetch(url,{
                 method: 'POST',
                 headers:{
                     'Content-Type':'application/json'
@@ -120,8 +120,8 @@ function getPlayerRegInfo(form){
         const data = new FormData(someEvent.target)
         const value = object.fromEntries(data.entries());
 
-        const postData = (url = 'http://localhost:3000/players',data={}){
-            const response = await fetch(url,{
+        const postData = (url = 'http://localhost:3000/players',data={})=>{
+            const response = fetch(url,{
                 method: 'POST',
                 headers:{
                     'Content-Type':'application/json'
@@ -143,8 +143,8 @@ function getEventRegInfo(form){
         const data = new FormData(someEvent.target)
         const value = object.fromEntries(data.entries());
 
-        const postData = (url = 'http://localhost:3000/events',data={}){
-            const response = await fetch(url,{
+        const postData = (url = 'http://localhost:3000/events',data={})=>{
+            const response = fetch(url,{
                 method: 'POST',
                 headers:{
                     'Content-Type':'application/json'
