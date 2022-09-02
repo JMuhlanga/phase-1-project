@@ -42,5 +42,6 @@ V. The page should post new e-sports events that are going to happen and where s
 # Challenges Faced
 
 1. The Api meant to be used was a trial run hence why theres no visible action at the leaderboard section.
+2. Seems to be issues with the submit section 
 
 
