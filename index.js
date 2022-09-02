@@ -36,7 +36,12 @@ document.getElementById('teamReg').addEventListener("click",function(){
         <input type="text" id="game" name="game" placeholder="Enter Team Email"><br><br>
         <input type="submit" value="submit">
     `;
+
+    //Appending Child Elements
     formSection.appendChild(formElement);
+
+    // function for Team registration submit
+    getTeamRegInfo(formSection);
 
 })
 
@@ -54,7 +59,12 @@ document.getElementById('playerReg').addEventListener("click",function(){
         <input type="text" id="location" name="location" placeholder="Enter Your location"><br><br>
         <input type="submit" value="submit">
     `;
+
+    // Appending Child Elements
     formSection.appendChild(formElement);
+
+    // Player Reg info Submit function
+    getPlayerRegInfo(formSection);
 
 })
 
@@ -72,40 +82,77 @@ document.getElementById('eventReg').addEventListener("click",function(){
         <input type="text" id="host" name="host" placeholder="Enter Event Host"><br><br>
         <input type="submit" value="submit">
     `;
+
+    //Appending Child Elements
     formSection.appendChild(formElement);
+
+    //function for listening to submit
+    getEventRegInfo(formSection);
 
 })
 
 // function for Event listener for the submit of the Team registration form
-function getTeamRegInfo(){
+function getTeamRegInfo(form){
     document.getElementById('teamRegForm').addEventListener('submit', (someEvent)=>{
         someEvent.preventDefault();
         const data = new FormData(someEvent.target)
         const value = object.fromEntries(data.entries());
-        
+
+        const postData = (url = 'http://localhost:3000/teamsRegistration',data={}){
+            const response = await fetch(url,{
+                method: 'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            return response.json()
+        }
+                
     })
 }
 
 // function for Event listener for the submit of the player registration form
-function getPlayerRegInfo(){
+function getPlayerRegInfo(form){
     document.getElementById('playerRegForm').addEventListener('submit', (someEvent)=>{
         someEvent.preventDefault();
         someEvent.preventDefault();
         const data = new FormData(someEvent.target)
         const value = object.fromEntries(data.entries());
+
+        const postData = (url = 'http://localhost:3000/players',data={}){
+            const response = await fetch(url,{
+                method: 'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            return response.json()
+        }
         
     })
 }
 
 
 // function for Event listener for the submit of the Team registration form
-function getEventRegInfo(){
+function getEventRegInfo(form){
     document.getElementById('eventRegForm').addEventListener('submit', (someEvent)=>{
         someEvent.preventDefault();
         someEvent.preventDefault();
         const data = new FormData(someEvent.target)
         const value = object.fromEntries(data.entries());
-    
+
+        const postData = (url = 'http://localhost:3000/events',data={}){
+            const response = await fetch(url,{
+                method: 'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            return response.json()
+        }  
         
     })
 }
