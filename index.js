@@ -29,11 +29,11 @@ document.getElementById('teamReg').addEventListener("click",function(){
     const formElement = document.createElement(`form`);
     formElement.setAttribute('id','teamRegForm');
     formElement.setAttribute('action','POST')
-    formElement.innerHTML = `<input type="text" id="tname" placeholder="Enter Team Name"><br><br>
-        <input type="text" id="tlocation" placeholder="Enter Team Location"><br><br>
-        <input type="text" id="tleader" placeholder="Enter Team Leader Name"><br><br>
-        <input type="text" id="temail" placeholder="Enter Team Email"><br><br>
-        <input type="text" id="tgame" placeholder="Enter Team Email"><br><br>
+    formElement.innerHTML = `<input type="text" id="teamName" name= "teamName" placeholder="Enter Team Name"><br><br>
+        <input type="text" id="teamLocation" name="teamLocation" placeholder="Enter Team Location"><br><br>
+        <input type="text" id="teamLeader" name="teamLeader" placeholder="Enter Team Leader Name"><br><br>
+        <input type="text" id="teamEmail" name="teamEmail" placeholder="Enter Team Email"><br><br>
+        <input type="text" id="game" name="game" placeholder="Enter Team Email"><br><br>
         <input type="submit" value="submit">
     `;
     formSection.appendChild(formElement);
@@ -46,12 +46,12 @@ document.getElementById('playerReg').addEventListener("click",function(){
     const formElement = document.createElement(`form`);
     formElement.setAttribute('id','playerRegForm');
     formElement.setAttribute('action','POST')
-    formElement.innerHTML = `<input type="text" id="fname" placeholder="Enter First Name"><br><br>
-        <input type="text" id="lname" placeholder="Enter Last Name"><br><br>
-        <input type="number" id="page" placeholder="Enter Your Age"><br><br>
-        <input type="text" id="pemail" placeholder="Enter Your E-mail"><br><br>
-        <input type="text" id="pnumber" placeholder="Enter Your number"><br><br>
-        <input type="text" id="plocation" placeholder="Enter Your location"><br><br>
+    formElement.innerHTML = `<input type="text" id= "firstName" name= "firstName" placeholder="Enter First Name"><br><br>
+        <input type="text" id= "lastName" name= "lastName" placeholder="Enter Last Name"><br><br>
+        <input type="number" id="age" name="age" placeholder="Enter Your Age"><br><br>
+        <input type="text" id="email" name="email" placeholder="Enter Your E-mail"><br><br>
+        <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter Your number"><br><br>
+        <input type="text" id="location" name="location" placeholder="Enter Your location"><br><br>
         <input type="submit" value="submit">
     `;
     formSection.appendChild(formElement);
@@ -64,32 +64,49 @@ document.getElementById('eventReg').addEventListener("click",function(){
     const formElement = document.createElement(`form`);
     formElement.setAttribute('id','eventRegForm');
     formElement.setAttribute('action','POST')
-    formElement.innerHTML = `<input type="text" id="ename" placeholder="Enter Event Name"><br><br>
-        <input type="text" id="edate" placeholder="Enter Event Date"><br><br>
-        <input type="text" id="evenue" placeholder="Enter Event Venue"><br><br>
-        <input type="text" id="edescription" placeholder="Enter Event Description"><br><br>
-        <input type="text" id="ehost" placeholder="Enter Event Host"><br><br>
+    formElement.innerHTML = `<input type="text" id="eventName" name="eventName" placeholder="Enter Event Name"><br><br>
+        <input type="text" id="date" name="date" placeholder="Enter Event Date"><br><br>
+        <input type="text" id="venue" name="venue" placeholder="Enter Event Venue"><br><br>
+        <input type="text" id="description" name="description" placeholder="Enter Event Description"><br><br>
+        <input type="text" id= "game" name="game" placeholder="Enter the Game you wish to Participate in"><br><br>
+        <input type="text" id="host" name="host" placeholder="Enter Event Host"><br><br>
         <input type="submit" value="submit">
     `;
     formSection.appendChild(formElement);
 
 })
 
-// Event listener for the submit of the Team registration form
-document.getElementById('teamRegForm').addEventListener('submit', (someEvent)=>{
-    someEvent.preventDefault();
-    
-})
+// function for Event listener for the submit of the Team registration form
+function getTeamRegInfo(){
+    document.getElementById('teamRegForm').addEventListener('submit', (someEvent)=>{
+        someEvent.preventDefault();
+        const data = new FormData(someEvent.target)
+        const value = object.fromEntries(data.entries());
+        
+    })
+}
 
-// Event listener for the submit of the Team registration form
-document.getElementById('playerRegForm').addEventListener('submit', (someEvent)=>{
-    someEvent.preventDefault();
-    
-})
+// function for Event listener for the submit of the player registration form
+function getPlayerRegInfo(){
+    document.getElementById('playerRegForm').addEventListener('submit', (someEvent)=>{
+        someEvent.preventDefault();
+        someEvent.preventDefault();
+        const data = new FormData(someEvent.target)
+        const value = object.fromEntries(data.entries());
+        
+    })
+}
 
-// Event listener for the submit of the Team registration form
-document.getElementById('eventRegForm').addEventListener('submit', (someEvent)=>{
-    someEvent.preventDefault();
+
+// function for Event listener for the submit of the Team registration form
+function getEventRegInfo(){
+    document.getElementById('eventRegForm').addEventListener('submit', (someEvent)=>{
+        someEvent.preventDefault();
+        someEvent.preventDefault();
+        const data = new FormData(someEvent.target)
+        const value = object.fromEntries(data.entries());
     
-    
-})
+        
+    })
+}
+
