@@ -21,6 +21,7 @@ function renderEvents (data){
 const formSection = document.getElementById('forms');
 
 document.getElementById('teamReg').addEventListener("click",function(){
+    this.disabled = true;
     const formElement = document.createElement(`form`);
     formElement.setAttribute('id','teamRegForm');
     formElement.setAttribute('action','POST')
@@ -36,6 +37,7 @@ document.getElementById('teamReg').addEventListener("click",function(){
 })
 
 document.getElementById('playerReg').addEventListener("click",function(){
+    this.disabled = true;
     const formElement = document.createElement(`form`);
     formElement.setAttribute('id','playerRegForm');
     formElement.setAttribute('action','POST')
@@ -52,6 +54,7 @@ document.getElementById('playerReg').addEventListener("click",function(){
 })
 
 document.getElementById('eventReg').addEventListener("click",function(){
+    this.disabled = true;
     const formElement = document.createElement(`form`);
     formElement.setAttribute('id','eventRegForm');
     formElement.setAttribute('action','POST')
@@ -65,3 +68,5 @@ document.getElementById('eventReg').addEventListener("click",function(){
     formSection.appendChild(formElement);
 
 })
+
+
